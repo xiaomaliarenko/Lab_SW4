@@ -2,14 +2,15 @@ name: SQL Schema Code Linter
 
 on:
   push:
-    branches: [ laboratory-work-4 ] 
+    branches: [ laboratory-work-4 ]
 
 jobs:
   SQLLinter:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code in Repository
-        [cite_start]uses: actions/checkout@v3 
+    
+    steps: # <--- 2 пробіли від runs-on (4 від jobs)
+      - name: Checkout Code in Repository 
+        uses: actions/checkout@v3
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -17,9 +18,8 @@ jobs:
           python-version: '3.x'
 
       - name: Install SQLFluff
-        [cite_start]run: pip install sqlfluff 
+        run: pip install sqlfluff
         
       - name: Start SQL Linter (Check Correct Schema)
         run: |
-          # Виконання перевірки коректної схеми. Використовуємо системну змінну GITHUB_WORKSPACE
-          sqlfluff lint ${{ github.workspace }}/DataSchema.sql --dialect postgres
+          python -m sqlfluff lint ${{ github.workspace }}/DataSchema.sql --dialect postgres
