@@ -37,3 +37,4 @@ jobs:
 
       - name: Print PostgreSQL Version
         run: psql --version
+# Rerun
