@@ -1,25 +1,24 @@
 name: SQL Schema Code Linter
 
 on:
-  push:
-    branches: [ laboratory-work-4 ] 
+  push:
+    branches: [ laboratory-work-4 ] 
 
 jobs:
-  SQLLinter:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout Code in Repository
-        uses: actions/checkout@v3
+  SQLLinter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code in Repository
+        [cite_start]uses: actions/checkout@v3 
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-      - name: Install SQLFluff
-        run: pip install sqlfluff
-        
-      - name: Start SQL Linter (Check Correct Schema)
-        run: |
-          sqlfluff lint ${{ github.workspace }}/.github/workflows/DataSchema.sql --dialect postgres
+      - name: Install SQLFluff
+        [cite_start]run: pip install sqlfluff 
+        
+      - name: Start SQL Linter (Check Correct Schema)
+        run: |
+          python -m sqlfluff fix .github/workflows/DataSchema.sql --dialect postgres
