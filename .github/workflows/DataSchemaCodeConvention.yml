@@ -6,10 +6,10 @@ on:
 
 jobs:
   SQLLinter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 4 пробіли від jobs
     
-    steps:
-      - name: Checkout Code in Repository
+    steps: # 4 пробіли від jobs, 2 пробіли від runs-on (якщо це не було виправлено)
+      - name: Checkout Code in Repository # 6 пробілів
         uses: actions/checkout@v3
 
       - name: Setup Python
@@ -18,9 +18,8 @@ jobs:
           python-version: '3.x'
 
       - name: Install SQLFluff
-        run: python -m pip install sqlfluff
-        
+        run: python -m pip install sqlfluff # 6 пробілів, 
+
       - name: Start SQL Linter (Check Correct Schema)
-        run: |
-          python -m sqlfluff lint ${{ github.workspace }}/DataSchema.sql --dialect postgres
-          
+        run: | # 6 пробілів
+          python -m sqlfluff lint ${{ github.workspace }}/DataSchema.sql --dialect postgres # 8 пробілів (відступ від run: |)
