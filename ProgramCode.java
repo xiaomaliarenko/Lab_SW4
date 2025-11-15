@@ -1,4 +1,4 @@
-public final class ArtHubResource { 
+public final class ArtHubResource {
 
     private ArtHubResource() {
     }
@@ -8,6 +8,6 @@ public final class ArtHubResource {
      * @param args Аргументи командного рядка
      */
     public static void main(final String[] args) {
-        System.out.println("Stworeno: Art-hub Resource!");
+        System.out.println("Stworzono: Art-hub Resource!");
     }
 }
