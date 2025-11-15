@@ -21,4 +21,4 @@ jobs:
         
       - name: Start SQL Linter (Check Correct Schema)
         run: |
-          sqlfluff lint .github/workflows/DataSchema.sql --dialect postgres
+          sqlfluff lint .github/workflows/DataSchemaModified.sql --dialect postgres
