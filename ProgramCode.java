@@ -1,5 +1,3 @@
-package com.arthub.resource; 
-
 public final class ArtHubResource {
 
     private ArtHubResource() {
