@@ -17,7 +17,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install SQLFluff
-        run: pip install sqlfluff # Прямий виклик pip зазвичай працює після setup-python
+        run: pip install sqlfluff 
         
       - name: Start SQL Linter (Check Modified Schema)
         run: |
