@@ -8,7 +8,7 @@ jobs:
   SQLLinter:
     runs-on: ubuntu-latest
     
-    steps: # <--- 2 пробіли від runs-on (4 від jobs)
+    steps: 
       - name: Checkout Code in Repository 
         uses: actions/checkout@v3
 
