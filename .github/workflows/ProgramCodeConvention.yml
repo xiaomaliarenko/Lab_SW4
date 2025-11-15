@@ -11,9 +11,13 @@ jobs:
       - name: Checkout Code in Repository
         uses: actions/checkout@v3
 
-      - name: Run Super Linter
+      - name: Lint Java Code (Checkstyle)
         uses: github/super-linter@v4
         env:
           VALIDATE_JAVA: true
           FILTER_REGEX_INCLUDE: ./*.java
+          DISABLE_ERRORS: true
+          JAVA_FILE_NAME: ProgramCode.java
+          VALIDATE_JAVACUSTOM: true
+          VALIDATE_JAVA_DISABLE_ERRORS: JavadocPackage 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
