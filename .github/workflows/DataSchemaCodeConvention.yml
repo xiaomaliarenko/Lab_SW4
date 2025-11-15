@@ -21,5 +21,4 @@ jobs:
         
       - name: Start SQL Linter (Check Modified Schema)
         run: |
-          # Перевіряємо модифікований файл, який тепер має бути ЧИСТИМ
           sqlfluff lint .github/workflows/DataSchemaModified.sql --dialect postgres
